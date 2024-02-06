@@ -1,0 +1,30 @@
+mat-card {
+  padding: 20px;
+  width: 60%;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  vertical-align:middle;
+}
+
+mat-form-field {
+  margin: 10px
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+button {
+
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  border-radius: 40px;
+  background: #638735;
+  min-width: 50px;
+  min-height: 56px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2) !important;
+}

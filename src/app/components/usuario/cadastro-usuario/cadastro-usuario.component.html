@@ -1,0 +1,41 @@
+<mat-card align="center" class="mat-elevation-z4">
+  <h1>Cadastrar Usuário</h1>
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Usuário</mat-label>
+        <input matInput formControlName="usuario">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Senha</mat-label>
+        <input formControlName="senha" type="password" matInput width="300px">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill" >
+        <mat-label>Tipo</mat-label>
+        <mat-select required formControlName="tipo">
+          <mat-option value="ADMINISTRADOR">Administrador</mat-option>
+          <mat-option value="VENDEDOR">Vendedor</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </form>
+  <div class="row buttons">
+    <button mat-button class="button-pesquisa" (click)="salvar()" color="primary">
+      <i class="far fa-check"></i>
+      Salvar
+    </button>
+    <button mat-button class="button-listar" (click)="limpar()" color="warn">
+      <i class="fas fa-eraser"></i>
+      Limpar
+    </button>
+    <button mat-button class="button-listar" (click)="cancelar()" color="warn">
+      <i class="far fa-ban"></i>
+      Cancelar
+    </button>
+  </div>
+</mat-card>

@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon"
+          (click)="opened = !opened">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{appName}} {{page}}</span>
+  <div class="spacer"></div>
+  <button mat-icon-button (click)="logout()" class="example-icon" matTooltip="Sair">
+    <i class="fas fa-sign-out-alt"></i>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav opened="true" class="example-sidenav" mode="side" (pointerover)="opened = true" (pointerout)="opened = false">
+    <mat-list class="sidenav-nav">
+      <mat-list-item class="sidenav-nav-item" *ngFor="let option of menuOptions" >
+        <a class="sidenav-nav-link" [routerLink]="[option.routeLink]"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}"
+            [matTooltip]="!opened ? option.label : ''" matTooltipPosition="right">
+          <i class="sidenav-link-icon"  [class]="option.icon" ></i>
+          <span class="sidenav-link-text" *ngIf="opened">
+            {{option.label}}
+          </span>
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,18 @@
+<app-filtros [formGroup]="formGroupFiltros"
+             [filtros]="filtros"
+             [titulo]="title"
+             (pesquisar)="pesquisar($event)">
+</app-filtros>
+
+<app-lista-paginada [displayedColumns]="displayedColumns"
+                    [colunas]="colunas"
+                    [acoes]="acoes"
+                    [provider]="provider"
+                    (changePaginator)="changePaginator($event)">
+</app-lista-paginada>
+
+<div class="button-container">
+  <button mat-fab color="primary" matTooltip="Novo" mat-flat-button (click)="novo()">
+    <i class="far fa-plus"></i>
+  </button>
+</div>

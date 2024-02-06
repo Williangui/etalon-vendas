@@ -1,0 +1,41 @@
+<mat-card align="center" class="mat-elevation-z4">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="id">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill" >
+        <mat-label>Tipo</mat-label>
+        <mat-select required formControlName="tipo">
+          <mat-option value="ADMINISTRADOR">Administrador</mat-option>
+          <mat-option value="VENDEDOR">Vendedor</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Usuário</mat-label>
+        <input formControlName="usuario" type="text" matInput width="300px">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <p>
+        <mat-label>Ativo</mat-label>
+      </p>
+      <mat-slide-toggle formControlName="ativo"  color="primary"></mat-slide-toggle>
+    </div>
+  </form>
+  <div class="row buttons">
+    <button mat-button class="button-pesquisa" (click)="salvar()" color="primary">
+      <i class="far fa-check"></i>
+      Salvar
+    </button>
+    <button mat-button class="button-listar" (click)="cancelar()" color="warn">
+      <i class="far fa-ban"></i>
+      Cancelar
+    </button>
+  </div>
+</mat-card>

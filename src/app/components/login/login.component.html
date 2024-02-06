@@ -1,0 +1,32 @@
+<mat-card align="center" class="mat-elevation-z4">
+
+  <h1>Login</h1>
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Usuário</mat-label>
+        <input matInput formControlName="usuario">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Senha</mat-label>
+        <input formControlName="senha" type="password" matInput width="300px">
+      </mat-form-field>
+    </div>
+  </form>
+  <div class="row buttons">
+    <button mat-button class="button-pesquisa" type="submit" (click)="login()" color="primary">
+      <i class="far fa-check"></i>
+      Entrar
+    </button>
+    <button mat-button class="button-listar" (click)="limpar()" color="warn">
+      <i class="fas fa-eraser"></i>
+      Limpar
+    </button>
+    <button mat-button class="button-listar" (click)="cadastrar()" color="primary">
+      <i class="fal fa-plus"></i>
+      Cadastrar
+    </button>
+  </div>
+</mat-card>

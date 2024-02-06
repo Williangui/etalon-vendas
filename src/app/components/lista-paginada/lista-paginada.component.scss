@@ -1,0 +1,39 @@
+table {
+  width: 95%;
+  margin-top: 20px;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  vertical-align:middle;
+  align-items: center;
+}
+
+ng-container {
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.table-header {
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+::ng-deep .mat-sort-header-container {
+  justify-content: inherit;
+}
+
+mat-paginator {
+  width: 95%;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  vertical-align:middle;
+}
+
+.button-acao {
+  text-align: center;
+}

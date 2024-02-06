@@ -1,0 +1,58 @@
+<mat-card align="center" class="mat-elevation-z4">
+    <form [formGroup]="formGroup">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Código</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="standard" style="text-align: left">
+                <mat-label>Quantidade</mat-label>
+                <input formControlName="quantidade" type="number" matInput width="300px">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" >
+                <mat-label>Produto</mat-label>
+                <mat-select required formControlName="produto">
+                    <mat-option *ngFor="let produto of produtos" [value]="produto.id">{{produto.nome}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" >
+                <mat-label>Tipo Movimentacao</mat-label>
+                <mat-select required formControlName="tipo">
+                    <mat-option *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="standard">
+                <mat-label>Usuario</mat-label>
+                <input matInput formControlName="usuario">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="standard">
+                <mat-label>Data</mat-label>
+                <input matInput formControlName="data" [value]="dataFormatada">
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="row">
+        <button mat-button class="button-pesquisa" (click)="salvar()" color="primary" [disabled]="!permiteSalvar">
+            <i class="far fa-check"></i>
+            Salvar
+        </button>
+        <button mat-button class="button-listar" (click)="limpar()" color="warn" [disabled]="!permiteSalvar">
+            <i class="fas fa-eraser"></i>
+            Limpar
+        </button>
+        <button mat-button class="button-listar" (click)="cancelar()" color="warn">
+            <i class="far fa-ban"></i>
+            Cancelar
+        </button>
+    </div>
+</mat-card>

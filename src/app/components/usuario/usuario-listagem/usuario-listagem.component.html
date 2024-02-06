@@ -1,0 +1,12 @@
+<app-filtros [formGroup]="formGroupFiltros"
+             [filtros]="filtros"
+             [titulo]="title"
+             (pesquisar)="pesquisar($event)">
+</app-filtros>
+
+<app-lista-paginada [displayedColumns]="displayedColumns"
+                    [colunas]="colunas"
+                    [acoes]="acoes"
+                    [provider]="provider"
+                    (changePaginator)="changePaginator($event)">
+</app-lista-paginada>

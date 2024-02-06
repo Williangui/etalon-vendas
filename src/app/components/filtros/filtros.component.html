@@ -1,0 +1,25 @@
+<mat-card align="center" class="mat-elevation-z4">
+  <mat-card-title style="text-align: center">{{titulo}}</mat-card-title>
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <mat-form-field [style.width]="filtro.width" appearance="standard" *ngFor="let filtro of filtros" >
+        <mat-label>{{filtro.label}}</mat-label>
+        <input *ngIf="filtro.type == 'text' || filtro.type == 'number' || filtro.type == 'date'" [formControlName]="filtro.field" [type]="filtro.type" matInput [width]="filtro.width">
+        <mat-select *ngIf="filtro.type === 'select'" [formControlName]="filtro.field">
+          <mat-option *ngFor="let opcao of filtro.opcoes" [value]="opcao.id">{{opcao.descricao ? opcao.descricao : opcao.nome ? opcao.nome : opcao.usuario}}</mat-option>
+        </mat-select>
+        <mat-select *ngIf="filtro.type === 'enum'" [formControlName]="filtro.field">
+          <mat-option *ngFor="let opcao of filtro.opcoes" [value]="opcao">{{opcao}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button class="button-pesquisa" (click)="ajustarFiltros()" color="primary">
+        <i class="far fa-search"></i>
+        Pesquisar
+      </button>
+      <button mat-button class="button-listar" (click)="limpar()" color="warn">
+        <i class="fas fa-eraser"></i>
+        Limpar
+      </button>
+    </div>
+  </form>
+</mat-card>

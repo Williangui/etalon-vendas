@@ -1,0 +1,30 @@
+<mat-card align="center" class="mat-elevation-z4">
+    <form [formGroup]="formGroup">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Código</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="standard">
+                <mat-label>Descricao</mat-label>
+                <input formControlName="descricao" type="text" matInput width="300px">
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="row">
+        <button mat-button class="button-pesquisa" (click)="salvar()" color="primary">
+            <i class="far fa-check"></i>
+            Salvar
+        </button>
+        <button mat-button class="button-listar" (click)="limpar()" color="warn">
+            <i class="fas fa-eraser"></i>
+            Limpar
+        </button>
+        <button mat-button class="button-listar" (click)="cancelar()" color="warn">
+            <i class="far fa-ban"></i>
+            Cancelar
+        </button>
+    </div>
+</mat-card>
